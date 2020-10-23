@@ -1,0 +1,20 @@
+$dark-colors: (
+  "light": #5c5c5c,
+  "medium": #404040,
+  "dark": #1f1f1f,
+);
+@function darkColor($color) {
+  @return map-get($dark-colors, $color);
+}
+
+$light-colors: (
+  "light": #f5f5f5,
+  "medium": #efefef,
+  "dark": #a7a7a7,
+);
+
+@function lightColor($color) {
+  @return map-get($light-colors, $color);
+}
+
+$primary-color: #1474ba;
