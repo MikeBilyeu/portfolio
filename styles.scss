@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  border: solid red;
 }
 
 html,
@@ -23,49 +22,45 @@ header {
   grid-template-rows: 1fr 1fr;
   color: darkColor(medium);
   background-image: url("./assets/images/BilyeuSignature.svg");
-  background-size: cover;
-  background-position: -20rem 1rem;
-  background-attachment: fixed;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: 50% 50vh;
+  //background-attachment: fixed;
 
   nav {
     background-color: lightColor(light);
     border-bottom: solid lightColor(medium) 1px;
     width: 100%;
-    height: 4.5rem;
-    padding: 0 1.5rem;
+    height: 10rem;
+    padding: 0 1rem;
     position: fixed;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 8fr 1fr 1fr 1fr 1fr;
     place-items: center;
-    .logo {
-      width: 7rem;
-    }
+
     a {
       color: darkColor(medium);
       text-decoration: none;
-      width: 5.5rem;
+      font-size: 2.5rem;
     }
 
     a:first-child {
-      justify-self: flex-start;
-      width: 8rem;
+      display: none;
     }
     #resume {
       color: $primary-color;
     }
   }
   h1 {
-    width: 27rem;
-    font-size: 4.5rem;
+    font-size: 9rem;
+    text-align: center;
     margin: auto;
     margin-bottom: 0;
   }
   h3 {
-    width: 27rem;
     margin: auto;
     margin-top: 2rem;
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     font-weight: normal;
 
     span {
@@ -79,14 +74,15 @@ main {
   color: darkColor(medium);
   display: grid;
   padding: 25vh 0;
-  grid-row-gap: 65vh;
+  grid-row-gap: 50rem;
   place-items: center;
   text-align: center;
   h2 {
-    font-size: 2.5rem;
+    font-size: 5rem;
+    margin-bottom: 0;
   }
   h3 {
-    font-size: 1.1rem;
+    font-size: 2.5rem;
     font-weight: normal;
   }
 
@@ -96,16 +92,15 @@ main {
   }
 
   #about {
+    padding: 0 1rem;
     #memoji {
-      width: 10rem;
+      width: 20rem;
       border-radius: 100%;
     }
 
     p {
-      width: 32rem;
       text-align: center;
-      line-height: 1.6rem;
-      font-size: 1.2rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -119,48 +114,53 @@ main {
     }
 
     .project {
-      padding: 3rem;
+      margin-top: 5rem;
+      padding: 1rem;
       background-color: darkColor(medium);
       color: white;
-      h2 {
-        span {
-          font-size: 1rem;
-        }
-      }
+
       p {
-        width: 30rem;
         margin: auto;
-        line-height: 1.5em;
+        font-size: 2.5rem;
       }
       &__img {
-        width: 50vw;
+        width: 95vw;
+        max-width: 70rem;
         border-radius: 0.1rem;
-        margin: 2rem auto;
+        margin: 6rem auto;
       }
     }
   }
 
   #skills {
+    h2 {
+      margin-bottom: 4rem;
+    }
     ul {
-      column-count: 3;
+      padding: 0;
+      margin: 0;
+      column-count: 2;
       column-gap: 5rem;
       li {
         list-style-type: none;
-        font-size: 1.2rem;
+        font-size: 2.5rem;
         padding: 2rem;
-        text-align: left;
+        text-align: center;
       }
     }
   }
 
   address {
-    height: 75vh;
+    height: 65rem;
     font-style: normal;
+    h2 {
+      margin-bottom: 4rem;
+    }
     span {
       display: inline-block;
-      font-size: 1.2rem;
+      font-size: 2.5rem;
       font-weight: bold;
-      width: 20rem;
+      width: 40rem;
       margin: 0.5rem 0;
       text-align: left;
       a {
@@ -173,21 +173,21 @@ main {
 }
 
 footer {
-  height: 75vh;
+  height: 55vh;
   background-color: darkColor(dark);
-  padding-top: 2rem;
+  padding-top: 5rem;
   position: relative;
 
   nav {
     display: grid;
-    grid-row-gap: 3rem;
+    grid-row-gap: 8rem;
 
     .logo {
-      width: 15rem;
+      width: 25rem;
     }
 
     .footer-icon {
-      width: 3.5rem;
+      width: 8rem;
     }
   }
 
@@ -195,6 +195,7 @@ footer {
     position: absolute;
     width: 100vw;
     bottom: 0rem;
+    font-size: 2rem;
   }
   p,
   a {
