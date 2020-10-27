@@ -18,9 +18,10 @@ header {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  color: #404040;
-  background-image: url("./assets/images/BilyeuSignature.svg");
-  background-size: 120%;
+  color: #fff;
+  background-color: #1f1f1f;
+  background-image: url("./assets/images/signature.png");
+  background-size: 160%;
   background-repeat: no-repeat;
   background-position: 50% 50vh;
 }
@@ -59,7 +60,7 @@ header h3 {
   font-weight: normal;
 }
 header h3 span {
-  color: #1474ba;
+  color: #fac820;
   font-style: italic;
 }
 
@@ -103,8 +104,8 @@ main #projects h3 a {
 }
 main #projects .project {
   margin-top: 5rem;
-  padding: 1rem;
-  background-color: #404040;
+  padding: 10rem 1rem;
+  background-color: #1f1f1f;
   color: white;
 }
 main #projects .project p {
@@ -144,7 +145,7 @@ main address span {
   font-size: 2.5rem;
   font-weight: bold;
   width: 40rem;
-  margin: 0.5rem 0;
+  margin: 1.5rem 0;
   text-align: left;
 }
 main address span a {

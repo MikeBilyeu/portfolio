@@ -20,9 +20,10 @@ header {
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  color: darkColor(medium);
-  background-image: url("./assets/images/BilyeuSignature.svg");
-  background-size: 120%;
+  color: #fff;
+  background-color: darkColor(dark);
+  background-image: url("./assets/images/signature.png");
+  background-size: 160%;
   background-repeat: no-repeat;
   background-position: 50% 50vh;
   //background-attachment: fixed;
@@ -64,7 +65,7 @@ header {
     font-weight: normal;
 
     span {
-      color: $primary-color;
+      color: $secondary-color;
       font-style: italic;
     }
   }
@@ -115,8 +116,8 @@ main {
 
     .project {
       margin-top: 5rem;
-      padding: 1rem;
-      background-color: darkColor(medium);
+      padding: 10rem 1rem;
+      background-color: darkColor(dark);
       color: white;
 
       p {
