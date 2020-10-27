@@ -11,12 +11,10 @@ body {
   font-family: "Lato", Arial, sans-serif;
   height: 100%;
   width: 100%;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: 100%;
 }
 
 header {
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -26,11 +24,22 @@ header {
   background-size: 160%;
   background-repeat: no-repeat;
   background-position: 50% 50vh;
-  //background-attachment: fixed;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -190px;
+    width: 100%;
+    overflow: hidden;
+    height: 195px;
+    background: url("./assets/images/headerBottom.svg");
+    background-size: 102%;
+    background-repeat: no-repeat;
+  }
 
   nav {
-    background-color: lightColor(light);
-    border-bottom: solid lightColor(medium) 1px;
+    background-color: rgba(245, 245, 245, 0.98);
+    border-bottom: solid lightColor(medium) 0.1rem;
     width: 100%;
     height: 10rem;
     padding: 0 1rem;
@@ -38,6 +47,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     place-items: center;
+    z-index: 1;
 
     a {
       color: darkColor(medium);
@@ -53,7 +63,8 @@ header {
     }
   }
   h1 {
-    font-size: 9rem;
+    font-size: 8rem;
+    font-weight: 900;
     text-align: center;
     margin: auto;
     margin-bottom: 0;
@@ -61,8 +72,8 @@ header {
   h3 {
     margin: auto;
     margin-top: 2rem;
-    font-size: 2.5rem;
-    font-weight: normal;
+    font-size: 3rem;
+    font-weight: 400;
 
     span {
       color: $secondary-color;
@@ -75,25 +86,27 @@ main {
   color: darkColor(medium);
   display: grid;
   padding: 25vh 0;
-  grid-row-gap: 50rem;
+  grid-row-gap: 25rem;
   place-items: center;
   text-align: center;
   h2 {
-    font-size: 5rem;
+    font-size: 7rem;
+    font-weight: 900;
     margin-bottom: 0;
   }
   h3 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 700;
     font-weight: normal;
   }
 
   section,
   address {
-    padding-top: 7.5rem;
+    padding-top: 10rem;
   }
 
   #about {
-    padding: 0 1rem;
+    padding: 10rem 2rem 0 2rem;
     #memoji {
       width: 20rem;
       border-radius: 100%;
@@ -102,6 +115,8 @@ main {
     p {
       text-align: center;
       font-size: 3.5rem;
+      font-weight: 300;
+      color: darkColor(dark);
     }
   }
 
@@ -122,7 +137,8 @@ main {
 
       p {
         margin: auto;
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        font-weight: 300;
       }
       &__img {
         width: 95vw;
@@ -144,8 +160,10 @@ main {
       column-gap: 5rem;
       li {
         list-style-type: none;
-        font-size: 2.5rem;
-        padding: 2rem;
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: darkColor(dark);
+        padding: 3rem 2rem;
         text-align: center;
       }
     }
@@ -159,14 +177,14 @@ main {
     }
     span {
       display: inline-block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      width: 40rem;
+      font-size: 3.5rem;
+      font-weight: 700;
+      width: 52rem;
       margin: 1.5rem 0;
       text-align: left;
       a {
-        font-weight: normal;
-        color: inherit;
+        font-weight: 300;
+        color: darkColor(dark);
         text-decoration: none;
       }
     }
@@ -174,7 +192,7 @@ main {
 }
 
 footer {
-  height: 55vh;
+  height: 70vh;
   background-color: darkColor(dark);
   padding-top: 5rem;
   position: relative;
@@ -184,7 +202,7 @@ footer {
     grid-row-gap: 8rem;
 
     .logo {
-      width: 25rem;
+      width: 40rem;
     }
 
     .footer-icon {
@@ -196,7 +214,7 @@ footer {
     position: absolute;
     width: 100vw;
     bottom: 0rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   p,
   a {
