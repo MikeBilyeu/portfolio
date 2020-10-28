@@ -6,7 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Lato", Arial, sans-serif;
+  font-family: "Heebo", sans-serif, Arial;
   height: 100%;
   width: 100%;
 }
@@ -18,21 +18,23 @@ header {
   grid-template-rows: 1fr 1fr;
   color: #fff;
   background-color: #1f1f1f;
-  background-image: url("./assets/images/signature.png");
-  background-size: 45rem;
-  background-repeat: no-repeat;
-  background-position: 50% 45vh;
+}
+header #signature {
+  position: absolute;
+  width: 60vw;
+  max-width: 50rem;
+  min-width: 15rem;
+  bottom: -20vw;
+  z-index: 1;
 }
 header::after {
   content: "";
   position: absolute;
-  bottom: -190px;
+  bottom: -19vw;
   width: 100%;
-  overflow: hidden;
-  height: 195px;
-  background: url("./assets/images/headerBottom.svg");
+  background: url("./assets/images/headerBottom.svg") no-repeat center center;
   background-size: 102%;
-  background-repeat: no-repeat;
+  height: 20vw;
 }
 header nav {
   background-color: rgba(245, 245, 245, 0.98);
@@ -42,15 +44,15 @@ header nav {
   display: grid;
   grid-auto-flow: column;
   place-items: center;
-  z-index: 1;
+  z-index: 3;
 }
 header nav a {
   width: 100%;
   text-align: center;
   color: #404040;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 1.25rem 0.75rem;
+  font-size: 0.8rem;
+  padding: 1.5rem 0.75rem;
 }
 header nav a:first-child {
   display: none;
@@ -64,13 +66,18 @@ header h1 {
   text-align: center;
   margin: auto;
   margin-bottom: 0;
+  z-index: 2;
+}
+header h1 #title-break {
+  display: none;
 }
 header h3 {
   margin: auto;
   text-align: center;
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
+  z-index: 2;
 }
 header h3 span {
   color: #fac820;
@@ -80,7 +87,7 @@ header h3 span {
 main {
   color: #404040;
   display: grid;
-  padding: 25vh 0;
+  padding: 25vw 0;
   grid-row-gap: 10rem;
   place-items: center;
   text-align: center;
@@ -203,6 +210,43 @@ footer p,
 footer a {
   color: #5c5c5c;
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    grid-template-rows: 3fr 2fr;
+  }
+  header nav {
+    grid-template-columns: 8fr repeat(4, 1fr);
+  }
+  header nav a:first-child {
+    display: inline;
+    width: 9rem;
+    justify-self: start;
+    padding: 0.4rem 1rem 0.2rem 1rem;
+  }
+  header nav a:first-child img {
+    width: 7rem;
+  }
+  header nav a {
+    padding: 1.5rem 2.5rem;
+  }
+  header h1 {
+    font-size: 3.75rem;
+    text-align: left;
+    line-height: 3.75rem;
+    width: 25rem;
+  }
+  header h1 #title-break {
+    display: inherit;
+  }
+  header h3 {
+    font-size: 1.25rem;
+    width: 25rem;
+  }
+  header #signature {
+    bottom: -25vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

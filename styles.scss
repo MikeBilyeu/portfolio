@@ -8,7 +8,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Lato", Arial, sans-serif;
+  font-family: "Heebo", sans-serif, Arial;
   height: 100%;
   width: 100%;
 }
@@ -20,21 +20,24 @@ header {
   grid-template-rows: 1fr 1fr;
   color: #fff;
   background-color: darkColor(dark);
-  background-image: url("./assets/images/signature.png");
-  background-size: 45rem;
-  background-repeat: no-repeat;
-  background-position: 50% 45vh;
+
+  #signature {
+    position: absolute;
+    width: 60vw;
+    max-width: 50rem;
+    min-width: 15rem;
+    bottom: -20vw;
+    z-index: 1;
+  }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -190px;
+    bottom: -19vw;
     width: 100%;
-    overflow: hidden;
-    height: 195px;
-    background: url("./assets/images/headerBottom.svg");
+    background: url("./assets/images/headerBottom.svg") no-repeat center center;
     background-size: 102%;
-    background-repeat: no-repeat;
+    height: 20vw;
   }
 
   nav {
@@ -45,15 +48,15 @@ header {
     display: grid;
     grid-auto-flow: column;
     place-items: center;
-    z-index: 1;
+    z-index: 3;
 
     a {
       width: 100%;
       text-align: center;
       color: darkColor(medium);
       text-decoration: none;
-      font-size: 1rem;
-      padding: 1.25rem 0.75rem;
+      font-size: 0.8rem;
+      padding: 1.5rem 0.75rem;
     }
 
     a:first-child {
@@ -63,19 +66,26 @@ header {
       color: $primary-color;
     }
   }
+
   h1 {
     font-size: 2.5rem;
     font-weight: 900;
     text-align: center;
     margin: auto;
     margin-bottom: 0;
+    z-index: 2;
+    #title-break {
+      display: none;
+    }
   }
+
   h3 {
     margin: auto;
     text-align: center;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
+    z-index: 2;
 
     span {
       color: $secondary-color;
@@ -87,7 +97,7 @@ header {
 main {
   color: darkColor(medium);
   display: grid;
-  padding: 25vh 0;
+  padding: 25vw 0;
   grid-row-gap: 10rem;
   place-items: center;
   text-align: center;
@@ -225,5 +235,46 @@ footer {
   a {
     color: darkColor(light);
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    grid-template-rows: 3fr 2fr;
+    nav {
+      grid-template-columns: 8fr repeat(4, 1fr);
+      a:first-child {
+        display: inline;
+        width: 9rem;
+        justify-self: start;
+        padding: 0.4rem 1rem 0.2rem 1rem;
+        img {
+          width: 7rem;
+        }
+      }
+      a {
+        padding: 1.5rem 2.5rem;
+      }
+    }
+
+    h1 {
+      font-size: 3.75rem;
+      text-align: left;
+      line-height: 3.75rem;
+      width: 25rem;
+
+      #title-break {
+        display: inherit;
+      }
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      width: 25rem;
+    }
+
+    #signature {
+      bottom: -25vw;
+    }
   }
 }
