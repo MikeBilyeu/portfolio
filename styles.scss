@@ -143,6 +143,11 @@ main {
       }
     }
 
+    h4 {
+      color: #a7a7a7;
+      font-weight: 300;
+    }
+
     .project {
       margin-top: 2rem;
       padding: 5rem 0.5rem;
@@ -156,10 +161,9 @@ main {
         max-width: 30rem;
       }
       &__img {
-        width: 90vw;
-        max-width: 50rem;
+        width: 15rem;
         border-radius: 0.1rem;
-        margin: 3rem auto;
+        margin: 2rem 1rem;
       }
     }
   }
